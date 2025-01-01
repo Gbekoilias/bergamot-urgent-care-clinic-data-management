@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+  }
+  
+  /* Header Styles */
+  header {
+      background-color: #007bff; /* Bootstrap primary color */
+      color: white;
+      padding: 20px;
+      text-align: center;
+  }
+  
+  header h1 {
+      margin: 0;
+  }
+  
+  nav {
+      margin-top: 10px;
+  }
+  
+  nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+  }
+  
+  nav a:hover {
+      text-decoration: underline;
+  }
+  
+  /* Main Content Styles */
+  main {
+      padding: 20px;
+  }
+  
+  /* Section Styles */
+  section {
+      margin-bottom: 30px;
+      padding: 15px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+      color: #007bff; /* Bootstrap primary color */
+  }
+  
+  /* Form Styles */
+  form {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  input[type="file"] {
+      margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+      background-color: #007bff; /* Bootstrap primary color */
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+      background-color: #0056b3; /* Darker shade for hover effect */
+  }
+  
+  /* Results and Visualization Styles */
+  #results {
+      padding-top: 10px;
+  }
+  
+  .visualization {
+      margin-top: 20px;
+  }
+  
+  .visualization img {
+      max-width: 100%;
+      height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Footer Styles */
+  footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #007bff; /* Bootstrap primary color */
+      color: white;
+  }
+  

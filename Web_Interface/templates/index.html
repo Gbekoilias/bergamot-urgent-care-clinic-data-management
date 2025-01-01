@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Data Analysis Dashboard</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('upload') }}">Upload Data</a>
+            <a href="{{ url_for('results') }}">View Results</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="upload-section">
+            <h2>Upload Your Data</h2>
+            <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".csv" required>
+                <input type="submit" value="Upload">
+            </form>
+        </section>
+
+        <section id="results-section">
+            <h2>Analysis Results</h2>
+            <div id="results">
+                {% if t_stat is not none %}
+                    <p><strong>T-Statistic:</strong> {{ t_stat }}</p>
+                    <p><strong>P-Value:</strong> {{ p_value }}</p>
+                {% else %}
+                    <p>No results available. Please upload data to see results.</p>
+                {% endif %}
+            </div>
+
+            <!-- Placeholder for visualizations -->
+            <div id="visualizations">
+                {% if visualizations %}
+                    {% for viz in visualizations %}
+                        <div class="visualization">
+                            <h3>{{ viz.title }}</h3>
+                            <img src="{{ viz.image_url }}" alt="{{ viz.title }}">
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No visualizations available.</p>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Data Analysis Dashboard. All rights reserved.</p>
+    </footer>
+
+    <!-- Optional JavaScript for interactivity -->
+    <script>
+        $(document).ready(function() {
+            // Add any JavaScript functionality here
+        });
+    </script>
+
+</body>
+</html>
